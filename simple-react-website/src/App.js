@@ -1,23 +1,18 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import FooterBox from './components/FooterBox';
+import SidebarBox from './components/SidebarBox';
+import MainContentBox from './components/MainContentBox';
 
 function App() {
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', gap: 0 }}>
       <Header />
-      <main style={{ minHeight: '80vh', padding: '20px' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
+      <div style={{ display: 'flex', flexGrow: 1, gap: '10px', minHeight: 0 }}>
+        <SidebarBox />
+        <MainContentBox />
+      </div>
+      <FooterBox />
     </div>
   );
 }
