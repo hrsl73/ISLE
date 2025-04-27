@@ -8,7 +8,7 @@ function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', gap: 0 }}>
       <Header />
-      <div style={{ display: 'flex', flexGrow: 1, gap: '10px', minHeight: 0 }}>
+      <div style={{ display: 'flex', flexGrow: 1, gap: 0, minHeight: 0 }}>
         <SidebarBox />
         <MainContentBox />
       </div>

@@ -9,7 +9,9 @@ const HeaderBox = () => {
       backgroundColor: '#f0f0f0'
     }}>
       Header Component
+      <h1>Welcome to ISLE</h1>
     </div>
+    
   );
 };
 

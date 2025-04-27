@@ -8,7 +8,7 @@ const FooterBox = () => {
       textAlign: 'center',
       backgroundColor: '#f0f0f0'
     }}>
-      Footer Component
+      Copyright © 2025 ISLE. All rights reserved.
     </div>
   );
 };
