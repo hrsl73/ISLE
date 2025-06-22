@@ -86,7 +86,7 @@ const HeroSection = () => {
         paddingTop: '10px',
       }}>
         <img
-          src="/profile_circular.png"
+          src="ISLE/public/isle-logo.png" 
           alt="Hero"
           style={{
             width: '100%',
