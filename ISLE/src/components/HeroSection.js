@@ -60,20 +60,7 @@ const HeroSection = () => {
         }}>
           Join us and explore the possibilities.
         </p>
-        <button style={{
-          marginTop: '20px',
-          padding: '12px 24px',
-          fontSize: '1rem',
-          fontWeight: 'bold',
-          color: '#fff',
-          backgroundColor: '#3D52A0',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          width: 'fit-content'
-        }}>
-          About Us
-        </button>
+        
       </div>
 
       {/* Right Column (Image) */}
@@ -86,7 +73,7 @@ const HeroSection = () => {
         paddingTop: '10px',
       }}>
         <img
-          src="ISLE/public/isle-logo.png" 
+          src="/isle-logo.png" 
           alt="Hero"
           style={{
             width: '100%',

@@ -1,23 +1,29 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 
-dotenv.config();
-
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
-app.use(cors());
+// ✅ CORS Configuration (must come before any routes)
+app.use(cors({
+  origin: 'http://localhost:3000',  // Frontend origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true                // If you're sending cookies or auth headers
+}));
+
+// ✅ Parse incoming JSON requests
 app.use(express.json());
 
+// ✅ Mount authentication routes
 app.use('/api/auth', authRoutes);
 
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('MongoDB connected');
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-  })
-  .catch(err => console.log(err));
+// ✅ Basic health check route
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
+// ✅ Start server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
